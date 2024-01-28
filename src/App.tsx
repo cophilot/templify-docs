@@ -1,5 +1,5 @@
 import reactLogo from './assets/react.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
     return (
@@ -24,6 +24,12 @@ function App() {
 
             <p className="read-the-docs">
                 Click on the templify and React logos to learn more
+            </p>
+            <p className="read-the-docs">
+                by{' '}
+                <a href="https://philipp-bonin.com/" target="_blank">
+                    Philipp B.
+                </a>
             </p>
         </>
     );
