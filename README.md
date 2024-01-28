@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+<div align="center">
+  <br />
+  <img src="https://raw.githubusercontent.com/cophilot/templify/master/assets/logo.png" alt="templify-docsLogo" width="30%"/>
+  <h1>templify-docs</h1>
+  <p>
+     The documentation for the templify project.
+  </p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Badges -->
+<div align="center">
+   <a href="https://github.com/cophilot/templify-docs/blob/main/LICENSE">
+       <img src="https://img.shields.io/github/license/cophilot/templify-docs" alt="license" />
+   </a>
+   <a href="https://github.com/cophilot/templify-docs/stargazers">
+       <img src="https://img.shields.io/github/stars/cophilot/templify-docs" alt="stars" />
+   </a>
+   <a href="https://github.com/cophilot/templify-docs/commits/main">
+       <img src="https://img.shields.io/github/last-commit/cophilot/templify-docs" alt="last commit" />
+   </a>
+</div>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the documentation for the [templify project](https://github.com/cophilot/templify).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+by [Philipp B.](https://github.com/cophilot)
