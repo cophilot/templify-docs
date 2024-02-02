@@ -1,7 +1,19 @@
-import reactLogo from './assets/react.svg';
 import './App.scss';
+import { useEffect, useState } from 'react';
 
 function App() {
+    const [version, setVersion] = useState<string>('loading...');
+
+    useEffect(() => {
+        fetch(
+            'https://api.github.com/repos/cophilot/templify/releases/latest'
+        ).then((response) => {
+            response.json().then((data) => {
+                setVersion('v' + data.tag_name);
+            });
+        });
+    }, []);
+
     return (
         <>
             <div>
@@ -12,19 +24,25 @@ function App() {
                         alt="Vite logo"
                     />
                 </a>
-                <a href="https://react.dev" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
+            </div>
+            <h1>templify</h1>
+
+            <div>
+                <a
+                    className="version-label"
+                    href="https://github.com/cophilot/templify/releases/latest"
+                    target="_blank">
+                    {version}
                 </a>
             </div>
-            <h1>templify + React</h1>
 
             <p className="read-the-docs">
-                Click on the templify and React logos to learn more
+                templify is a CLI tool to keep track of templates and generate
+                files from them.
             </p>
+            <a href="https://github.com/cophilot/templify" target="_blank">
+                <i className="bi bi-github icon"></i>
+            </a>
             <p className="read-the-docs">
                 by{' '}
                 <a href="https://philipp-bonin.com/" target="_blank">
