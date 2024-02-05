@@ -1,0 +1,33 @@
+.command-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left !important;
+    h1,
+    h2,
+    h3,
+    p,
+    h4 {
+        text-align: left;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    button {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .command-container {
+        width: 100%;
+        button {
+            max-width: 100%;
+        }
+    }
+}

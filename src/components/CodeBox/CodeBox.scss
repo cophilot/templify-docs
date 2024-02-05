@@ -1,0 +1,30 @@
+.CodeBox {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    overflow-x: auto;
+    i {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-left: 10px;
+        &:hover {
+            color: #007500;
+            scale: 1.2;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CodeBox {
+        width: 90%;
+    }
+}
