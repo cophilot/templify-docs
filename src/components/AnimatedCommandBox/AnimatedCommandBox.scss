@@ -1,0 +1,41 @@
+.AnimatedCommandBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 40%;
+    .cursor {
+        width: 40px;
+        height: 50px;
+        margin-left: 10px;
+        border-bottom: 4px solid #fff;
+        animation: blink 1s infinite;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .AnimatedCommandBox {
+        margin-left: 0;
+        h1 {
+            font-size: 3em;
+        }
+
+        .cursor {
+            width: 30px;
+            height: 40px;
+            margin-left: 10px;
+            border-bottom: 3px solid #fff;
+        }
+    }
+}

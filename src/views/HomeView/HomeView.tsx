@@ -24,15 +24,12 @@ function HomeView() {
                     <PulseLogo></PulseLogo>
 
                     <h1>templify</h1>
-
-                    <div>
-                        <a
-                            className="version-label"
-                            href="https://github.com/cophilot/templify/releases/latest"
-                            target="_blank">
-                            {version}
-                        </a>
-                    </div>
+                    <a
+                        className="version-label"
+                        href="https://github.com/cophilot/templify/releases/latest"
+                        target="_blank">
+                        {version}
+                    </a>
 
                     <p className="">
                         templify is a CLI tool to keep track of templates and

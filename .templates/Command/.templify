@@ -1,0 +1,10 @@
+# This file is used by templify to generate new files from this template.
+
+# You can use the following variables in this file:
+
+# description:The description of the template
+
+# path:The path of the template based on the project root (You can also use the placeholder $$name$$ to use the name of the template for the path)
+
+description:A new Command page
+path:src/commands

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.scss';
 import logo from '../../assets/logo.png';
 
@@ -15,6 +15,14 @@ function NavBar() {
                     navigate('/');
                 }}
             />
+            <div className="navbar-links">
+                <Link className="navbar-link" to="/command">
+                    Commands
+                </Link>
+                {/*   <Link className="navbar-link" to="/vault">
+                    Vault
+                </Link> */}
+            </div>
         </div>
     );
 }
