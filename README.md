@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  <img src="https://raw.githubusercontent.com/cophilot/templify/master/assets/logo.png" alt="templify-docsLogo" width="30%"/>
+  <img src="src/assets/logo.png" alt="templify-docsLogo" width="30%"/>
   <h1>templify-docs</h1>
   <p>
      The documentation for the templify project.

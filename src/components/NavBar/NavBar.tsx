@@ -1,12 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import './NavBar.scss';
 
 function NavBar() {
+    const navigate = useNavigate();
+
     return (
         <div className="NavBar">
             <img
-                src="https://raw.githubusercontent.com/cophilot/templify/master/assets/logo.png"
+                src="src/assets/logo.png"
                 className="navbar-logo"
                 alt="t"
+                onClick={() => {
+                    navigate('/');
+                }}
             />
         </div>
     );

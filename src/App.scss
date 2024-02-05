@@ -13,18 +13,3 @@
 .card {
     padding: 2em;
 }
-
-.version-label {
-    background-color: #000000;
-    border: 1px solid #ffffff;
-    color: white;
-    padding: 0.7em;
-    border-radius: 0.5em;
-    opacity: 0.5;
-    color: white !important;
-    box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.453);
-
-    &:hover {
-        opacity: 1;
-    }
-}
