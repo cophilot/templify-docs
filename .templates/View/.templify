@@ -3,4 +3,4 @@
 # description:The description of the template
 # path:The path of the template
 description:A new View
-path:src/views
+path:src/views/$$name$$View

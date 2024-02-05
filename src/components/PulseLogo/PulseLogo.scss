@@ -1,0 +1,50 @@
+.PulseLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    &:hover {
+        .front {
+            filter: brightness(1);
+        }
+        .back {
+            animation: none;
+        }
+    }
+
+    .logo {
+        width: 250px;
+        height: 250px;
+        transition: 0.2s;
+
+        //animation: logo-pulse 3s infinite;
+    }
+
+    .front {
+        margin-top: -250px;
+        filter: brightness(0.0001);
+        transition: 2s;
+    }
+    .back {
+        animation: logo-pulse 5s linear infinite;
+    }
+}
+
+@keyframes logo-pulse {
+    0% {
+        filter: drop-shadow(0 0 2em #61dafb) brightness(0.01);
+    }
+    20% {
+        filter: drop-shadow(0 0 2em #61dafb) brightness(0.5);
+    }
+    50% {
+        filter: drop-shadow(0 0 2em #61dafb) brightness(0.99);
+    }
+    80% {
+        filter: drop-shadow(0 0 2em #61dafb) brightness(0.5);
+    }
+    100% {
+        filter: drop-shadow(0 0 2em #61dafb) brightness(0.01);
+    }
+}
