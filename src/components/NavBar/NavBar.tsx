@@ -5,6 +5,21 @@ import logo from '../../assets/logo.png';
 function NavBar() {
     const navigate = useNavigate();
 
+    const toggleMenu = () => {
+        const menu = document.querySelector('.navbar-links');
+        if (menu === null) {
+            return;
+        }
+
+        if (menu.classList.contains('active')) {
+            menu.classList.remove('active');
+            menu.classList.add('inactive');
+        } else {
+            menu.classList.remove('inactive');
+            menu.classList.add('active');
+        }
+    };
+
     return (
         <div className="NavBar">
             <img
@@ -15,12 +30,16 @@ function NavBar() {
                     navigate('/');
                 }}
             />
-            <div className="burger-menu">
+            <div
+                className="burger-menu"
+                onClick={() => {
+                    toggleMenu();
+                }}>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-            <div className="navbar-links">
+            <div className="navbar-links inactive">
                 {/*  <Link className="navbar-link" to="/command">
                     About
                 </Link> */}
