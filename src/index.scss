@@ -34,6 +34,7 @@
     color: white;
     &:hover {
         scale: 1.1;
+        color: #007500;
     }
 }
 
@@ -71,6 +72,7 @@ button {
     background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    color: white;
 }
 button:hover {
     border-color: #007500;

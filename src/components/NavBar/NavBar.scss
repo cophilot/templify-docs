@@ -12,10 +12,12 @@
     z-index: 1000;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.6);
     .navbar-logo {
-        width: 70px;
+        width: 50px;
         cursor: pointer;
         transition: 0.2s;
         padding-left: 1rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
 
         &:hover {
             scale: 1.1;

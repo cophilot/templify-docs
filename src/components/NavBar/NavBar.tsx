@@ -16,9 +16,33 @@ function NavBar() {
                 }}
             />
             <div className="navbar-links">
+                {/*  <Link className="navbar-link" to="/command">
+                    About
+                </Link> */}
+                <a
+                    className="navbar-link"
+                    href="https://github.com/cophilot/templify"
+                    target="_blank">
+                    About
+                </a>
                 <Link className="navbar-link" to="/command">
                     Commands
                 </Link>
+                {/*                 <Link className="navbar-link" to="/command">
+                    Vault
+                </Link>*/}
+                <a
+                    className="navbar-link"
+                    href="https://github.com/cophilot/templify-vault"
+                    target="_blank">
+                    Vault
+                </a>
+                <a
+                    className="navbar-link"
+                    href="https://github.com/cophilot/templify/releases"
+                    target="_blank">
+                    Releases
+                </a>
                 {/*   <Link className="navbar-link" to="/vault">
                     Vault
                 </Link> */}
