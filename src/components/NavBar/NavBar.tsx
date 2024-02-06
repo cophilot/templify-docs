@@ -15,6 +15,11 @@ function NavBar() {
                     navigate('/');
                 }}
             />
+            <div className="burger-menu">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </div>
             <div className="navbar-links">
                 {/*  <Link className="navbar-link" to="/command">
                     About
