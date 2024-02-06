@@ -13,9 +13,9 @@ function initCommand() {
                     <AnimatedCommandBox allCommands={['init']} />
                     <p>
                         Initialize templify in the current directory. This will
-                        create a <i>.templates</i> folder in the root folder of
-                        your project. By default an Example template will be
-                        fetched to demonstrate the concept of templify.
+                        create a <code>.templates</code> folder in the root
+                        folder of your project. By default an Example template
+                        will be fetched to demonstrate the concept of templify.
                     </p>
                     <CodeBox>{'tpy init [flags]'}</CodeBox>
                     {/* <h2>Arguments</h2>

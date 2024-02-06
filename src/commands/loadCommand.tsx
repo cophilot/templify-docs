@@ -14,7 +14,7 @@ function loadCommand() {
                     <p>
                         Load predefined templates from GitHub. This will add all
                         templates that are in the folder from the url, to your
-                        project.
+                        project as a new template.
                     </p>
                     <p>
                         <b>
