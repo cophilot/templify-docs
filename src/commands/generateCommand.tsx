@@ -54,7 +54,14 @@ function generateCommand() {
                         If this flag is set, the <code>template-name</code> has
                         to match exactly the name of the template.
                     </p>
-                    <CodeBox>tpy generate -strict</CodeBox>
+                    <CodeBox>tpy generate Component NavBar -strict</CodeBox>
+                    <h3>-dry-run</h3>
+                    <p>
+                        If this flag is set, the command will not create any
+                        files. It will only print the files that would be
+                        created.
+                    </p>
+                    <CodeBox>tpy generate Component NavBar -dry-run</CodeBox>
                     <h2>Example</h2>
                     <p>
                         Generate a new Navbar component in your React project
