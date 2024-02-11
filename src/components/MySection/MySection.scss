@@ -1,0 +1,15 @@
+.MySection {
+    width: 70%;
+    // make that all content is on the left
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left !important;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .MySection {
+        width: 90%;
+    }
+}

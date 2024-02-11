@@ -1,8 +1,13 @@
 import './Divider.scss';
 
-function Divider() {
+interface Props {
+    style?: React.CSSProperties;
+}
+
+function Divider({ style }: Props) {
     const width = window.innerWidth;
-    const rotate = Math.random() > 0.5 ? -1 : 1;
+    const deg = [-1, 0, 1];
+    const rotate = deg[Math.floor(Math.random() * deg.length)];
 
     return (
         <div
@@ -10,6 +15,7 @@ function Divider() {
             style={{
                 width: width,
                 transform: `rotate(${rotate}deg)`,
+                ...style,
             }}></div>
     );
 }

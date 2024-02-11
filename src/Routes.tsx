@@ -9,6 +9,7 @@ import initCommand from './commands/initCommand';
 import listCommand from './commands/listCommand';
 import loadCommand from './commands/loadCommand';
 import generateCommand from './commands/generateCommand';
+import AboutView from './views/AboutView/AboutView';
 
 function Routes() {
     return (
@@ -28,6 +29,8 @@ function Routes() {
                     />
 
                     <Route path="/command" Component={CommandsView} />
+                    <Route path="/about" Component={AboutView} />
+                    <Route path="/:section" Component={HomeView} />
                     <Route path="/" Component={HomeView} />
                     <Route path="*" Component={HomeView} />
                 </ReactRoutes>

@@ -1,0 +1,11 @@
+.MyHeading {
+    cursor: pointer;
+    .link-icon {
+        opacity: 0;
+    }
+    &:hover {
+        .link-icon {
+            opacity: 0.6;
+        }
+    }
+}
