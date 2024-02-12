@@ -1,0 +1,31 @@
+.FileWindow {
+    width: 100%;
+}
+.file-content {
+    background-color: #1e1e1e;
+    padding: 5px 20px;
+    color: #fff;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    overflow-x: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.title-bar {
+    background-color: #141414;
+    padding: 10px 20px;
+    color: #ffffff70;
+    font-family: 'Fira Code', monospace;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+    .FileWindow {
+        width: 90%;
+    }
+}

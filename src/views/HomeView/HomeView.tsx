@@ -6,6 +6,7 @@ import Divider from '../../components/Divider/Divider';
 import { useParams } from 'react-router-dom';
 import MySection from '../../components/MySection/MySection';
 import CodeBox from '../../components/CodeBox/CodeBox';
+import FileWindow from '../../components/FileWindow/FileWindow';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('loading...');
@@ -123,6 +124,11 @@ function HomeView() {
                                 installation for the changes to take effect.
                             </i>
                         </p>
+                        <p>
+                            After installation run <code>tpy version</code> to
+                            verify that the installation was successful.
+                        </p>
+
                         <h2>Windows</h2>
                         <ol>
                             <li>
@@ -155,7 +161,98 @@ function HomeView() {
                                 </a>
                             </li>
                         </ol>
+                        <p>
+                            After installation run <code>tpy version</code> to
+                            verify that the installation was successful.
+                        </p>
                     </MySection>
+                    <Divider></Divider>
+                    <MySection heading="Structure">
+                        <p>
+                            The <code>.templates</code> directory is the heart
+                            of templify. It contains all your templates. You can
+                            create it by running <code>tpy init</code> in your
+                            project's root directory. You can also create it
+                            manually.
+                        </p>
+                    </MySection>
+                    <Divider></Divider>
+
+                    <MySection heading="Templates">
+                        <p>
+                            A template is a folder in the{' '}
+                            <code>.templates</code> directory of your project.
+                            It contains all files and subfolders that should be
+                            used when generating a file from the template. You
+                            can create a new template by running{' '}
+                            <code>{'tpy new <template-name>'}</code>. This will
+                            create a new empty template in the{' '}
+                            <code>.templates</code> directory, which you can
+                            fill with files and subfolders you want to use when
+                            generating a file from the template.
+                        </p>
+                    </MySection>
+
+                    <Divider></Divider>
+                    <MySection heading=".templify">
+                        <p>
+                            The <code>.templify</code> file is a file that
+                            contains configuration options for a template. It is
+                            located in the root of a template folder. It is a
+                            simple key-value file. The following keys are
+                            supported:
+                        </p>
+                        <ul>
+                            <li>
+                                <code>description</code> - A description of the
+                                template
+                            </li>
+                            <li>
+                                <code>path</code> - The path where the file
+                                should be generated based on the project root
+                            </li>
+                        </ul>
+                        <FileWindow name=".templates/Component/.templify">
+                            # This file is used by templify to generate new
+                            files from this template. <br /># You can use the
+                            following variables in this file: <br />
+                            # description:The description of the template <br />
+                            # path:The path of the template <br />
+                            <br />
+                            description:A default template for a new
+                            react-component <br />
+                            path:src/components/$$name$$
+                        </FileWindow>
+                        <p>
+                            <i>
+                                Lines starting with <code>#</code> are comments
+                            </i>
+                        </p>
+                    </MySection>
+                    <Divider></Divider>
+                    <MySection heading="Placeholders">
+                        <p>
+                            Placeholders are used to create dynamic templates.
+                            They are defined by a <code>$$</code> prefix and
+                            suffix. When generating a file from a template,
+                            placeholders are replaced by the user with the
+                            desired values. The following placeholders are
+                            supported:
+                        </p>
+                        <ul>
+                            <li>
+                                <code>$$name$$</code> - The name you want to
+                                give the file
+                            </li>
+                        </ul>
+                        <p>
+                            <i>
+                                You can use placeholders also in the{' '}
+                                <code>.templify</code> file.
+                            </i>
+                        </p>
+                    </MySection>
+
                     <Divider></Divider>
                     <MySection>
                         <p
