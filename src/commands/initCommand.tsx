@@ -28,6 +28,13 @@ function initCommand() {
                         example template, so you can use the command offline.
                     </p>
                     <CodeBox>tpy init -offline</CodeBox>
+                    <h3>-blank</h3>
+                    <p>
+                        When this flag is specified, only the{' '}
+                        <code>.templates</code> folder will be created, without
+                        any content.
+                    </p>
+                    <CodeBox>tpy init -blank</CodeBox>
                     {/* <h2>Example</h2>
                     <CodeBox>tpy init</CodeBox> */}
                     <button

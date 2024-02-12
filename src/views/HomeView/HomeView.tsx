@@ -244,6 +244,20 @@ function HomeView() {
                                 <code>$$name$$</code> - The name you want to
                                 give the file
                             </li>
+                            <li>
+                                <code>$$git-name$$</code> - The name of the
+                                current git user stored in the global git
+                                configuration ('unknown' if not set)
+                            </li>
+                            <li>
+                                <code>$$year$$</code> - The current year
+                            </li>
+                            <li>
+                                <code>$$month$$</code> - The current month
+                            </li>
+                            <li>
+                                <code>$$day$$</code> - The current day
+                            </li>
                         </ul>
                         <p>
                             <i>
