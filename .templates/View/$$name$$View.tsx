@@ -1,17 +1,19 @@
-import NavBar from '../../components/NavBar/NavBar';
 import './$$name$$View.scss';
 
+/**
+ * This is the $$name$$ view
+ * @author $$git-name$$
+ * @version 1.0.0
+ * @created $$year$$-$$month$$-$$day$$
+ */
 function $$name$$View() {
     return (
-        <>
-            <NavBar />
-            <div className="content">
-                <div className="$$name$$">
-                    <h1>Welcome to $$name$$!</h1>
-                    {/* TODO Add your content here */}
-                </div>
+        <div className="content">
+            <div className="$$name$$">
+                <h1>Welcome to $$name$$!</h1>
+                {/* Add your content here */}
             </div>
-        </>
+        </div>
     );
 }
 
