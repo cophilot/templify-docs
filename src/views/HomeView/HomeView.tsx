@@ -224,6 +224,13 @@ function HomeView() {
                             path:src/components/$$name$$
                         </FileWindow>
                         <p>
+                            <b>
+                                Lines starting with <code>.</code> are
+                                auto-generated and should not be edited
+                                manually!
+                            </b>
+                        </p>
+                        <p>
                             <i>
                                 Lines starting with <code>#</code> are comments
                             </i>
