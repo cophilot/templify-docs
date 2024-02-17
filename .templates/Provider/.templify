@@ -4,3 +4,5 @@
 # path:The path of the template
 description:A new Provider that holds shared data across the whole app
 path:src/providers
+
+.source:https://github.com/cophilot/templify-vault/tree/main/React-ts/Provider

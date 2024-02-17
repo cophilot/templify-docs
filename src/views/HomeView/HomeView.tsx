@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import MySection from '../../components/MySection/MySection';
 import CodeBox from '../../components/CodeBox/CodeBox';
 import FileWindow from '../../components/FileWindow/FileWindow';
+import MySubHeading from '../../components/MySubHeading/MySubHeading';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('loading...');
@@ -81,7 +82,9 @@ function HomeView() {
                     </MySection>
                     <Divider></Divider>
                     <MySection heading="Installation">
-                        <h2>Linux</h2>
+                        <MySubHeading parentHeading="Installation">
+                            Linux
+                        </MySubHeading>
                         <p>
                             Run the following command in your terminal to
                             isntall the latest version of templify:
@@ -129,7 +132,9 @@ function HomeView() {
                             verify that the installation was successful.
                         </p>
 
-                        <h2>Windows</h2>
+                        <MySubHeading parentHeading="Installation">
+                            Windows
+                        </MySubHeading>
                         <ol>
                             <li>
                                 Download the <code>tpy.exe</code> binary from
@@ -274,6 +279,46 @@ function HomeView() {
                         </p>
                     </MySection>
 
+                    <Divider></Divider>
+                    <MySection heading="Versioning">
+                        <p>
+                            Currently, templify is in version{' '}
+                            <a
+                                href="https://github.com/cophilot/templify/releases/latest"
+                                target="_blank">
+                                {version}
+                            </a>
+                        </p>
+                        <p>
+                            Run <code>tpy version</code> to check the installed
+                            version of templify. Run <code>tpy update</code> to
+                            update to the latest version or run{' '}
+                            <code>tpy update -version x.x.x</code> to update to
+                            a specific version.
+                        </p>
+                        <p>
+                            The number of the version is structured as{' '}
+                            <code>MAJOR.MINOR.PATCH</code> and is incremented
+                            based on the following rules:
+                        </p>
+                        <ul>
+                            <li>
+                                <b>Major</b> - breaking changes, new features,
+                                improvements that change the behavior of the
+                                tool completely
+                            </li>
+                            <li>
+                                <b>Minor</b> - new features, new commands and
+                                improvement changes that adds functionality to
+                                the tool but it can still be used the same way
+                            </li>
+                            <li>
+                                <b>Patch</b> - bug fixes, refactoring, flag
+                                added or anything that doesn't change the
+                                behavior of the tool
+                            </li>
+                        </ul>
+                    </MySection>
                     <Divider></Divider>
                     <MySection>
                         <p

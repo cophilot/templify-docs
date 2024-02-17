@@ -62,6 +62,9 @@ function NavBar() {
                     target="_blank">
                     Releases
                 </a>
+                <Link className="navbar-link install-btn" to="/installation">
+                    Install
+                </Link>
                 {/*   <Link className="navbar-link" to="/vault">
                     Vault
                 </Link> */}

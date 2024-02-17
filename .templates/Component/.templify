@@ -4,3 +4,5 @@
 # path:The path of the template
 description:A default template for a new react-component
 path:src/components/$$name$$
+
+.source:https://github.com/cophilot/templify-vault/tree/main/React-ts/Component

@@ -1,13 +1,14 @@
 import './Divider.scss';
+import { useState } from 'react';
 
 interface Props {
     style?: React.CSSProperties;
 }
 
 function Divider({ style }: Props) {
-    const width = window.innerWidth;
+    const [width] = useState(window.innerWidth);
     const deg = [-1, 0, 1];
-    const rotate = deg[Math.floor(Math.random() * deg.length)];
+    const [rotate] = useState(deg[Math.floor(Math.random() * deg.length)]);
 
     return (
         <div

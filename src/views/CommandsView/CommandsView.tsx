@@ -12,6 +12,7 @@ function CommandsView() {
         'new',
         'list',
         'load',
+        'reload',
         'generate',
     ];
 

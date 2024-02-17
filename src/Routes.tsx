@@ -10,6 +10,7 @@ import listCommand from './commands/listCommand';
 import loadCommand from './commands/loadCommand';
 import generateCommand from './commands/generateCommand';
 import AboutView from './views/AboutView/AboutView';
+import reloadCommand from './commands/reloadCommand';
 
 function Routes() {
     return (
@@ -23,6 +24,7 @@ function Routes() {
                     <Route path="/command/new" Component={newCommand} />
                     <Route path="/command/list" Component={listCommand} />
                     <Route path="/command/load" Component={loadCommand} />
+                    <Route path="/command/reload" Component={reloadCommand} />
                     <Route
                         path="/command/generate"
                         Component={generateCommand}

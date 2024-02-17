@@ -4,3 +4,5 @@
 # path:The path of the template
 description: A new typescipt type
 path:src/types
+
+.source:https://github.com/cophilot/templify-vault/tree/main/React-ts/Type
