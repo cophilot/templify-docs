@@ -56,6 +56,17 @@
             border-radius: 5px;
         }
     }
+    .burger-menu-cross {
+        display: none;
+        cursor: pointer;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+
+        i {
+            font-size: 2.5rem;
+        }
+    }
     .install-btn {
         background-color: #007500;
         color: white;
@@ -83,6 +94,9 @@
         box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0);
 
         .burger-menu {
+            display: block;
+        }
+        .burger-menu-cross {
             display: block;
         }
         .navbar-links {

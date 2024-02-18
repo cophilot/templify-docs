@@ -1,9 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.scss';
 import logo from '../../assets/logo.png';
+import { useState } from 'react';
 
 function NavBar() {
     const navigate = useNavigate();
+    const [active, setActive] = useState(false);
 
     const toggleMenu = () => {
         const menu = document.querySelector('.navbar-links');
@@ -14,9 +16,11 @@ function NavBar() {
         if (menu.classList.contains('active')) {
             menu.classList.remove('active');
             menu.classList.add('inactive');
+            setActive(false);
         } else {
             menu.classList.remove('inactive');
             menu.classList.add('active');
+            setActive(true);
         }
     };
 
@@ -30,15 +34,26 @@ function NavBar() {
                     navigate('/');
                 }}
             />
-            <div
-                className="burger-menu"
-                onClick={() => {
-                    toggleMenu();
-                }}>
-                <div className="line"></div>
-                <div className="line"></div>
-                <div className="line"></div>
-            </div>
+            {!active && (
+                <div
+                    className="burger-menu"
+                    onClick={() => {
+                        toggleMenu();
+                    }}>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                    <div className="line"></div>
+                </div>
+            )}
+            {active && (
+                <div
+                    className="burger-menu-cross"
+                    onClick={() => {
+                        toggleMenu();
+                    }}>
+                    <i className="bi bi-x-lg"></i>
+                </div>
+            )}
             <div className="navbar-links inactive">
                 <Link className="navbar-link" to="/">
                     Home
@@ -47,9 +62,6 @@ function NavBar() {
                 <Link className="navbar-link" to="/command">
                     Commands
                 </Link>
-                {/*                 <Link className="navbar-link" to="/command">
-                    Vault
-                </Link>*/}
                 <a
                     className="navbar-link"
                     href="https://github.com/cophilot/templify-vault"
@@ -65,9 +77,6 @@ function NavBar() {
                 <Link className="navbar-link install-btn" to="/installation">
                     Install
                 </Link>
-                {/*   <Link className="navbar-link" to="/vault">
-                    Vault
-                </Link> */}
             </div>
         </div>
     );

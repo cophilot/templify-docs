@@ -26,5 +26,8 @@
 @media screen and (max-width: 768px) {
     .CodeBox {
         width: 90%;
+        pre {
+            font-size: 0.5rem;
+        }
     }
 }

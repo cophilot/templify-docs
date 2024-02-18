@@ -42,15 +42,34 @@ function loadCommand() {
                         https://github.com/cophilot/templify-vault/tree/main/Example
                         -force
                     </CodeBox>
+                    <h3>-template</h3>
+                    <p>
+                        Specify that you only want to load a specific template
+                        from a collection.
+                    </p>
+                    <CodeBox>
+                        tpy load
+                        https://github.com/cophilot/templify-vault/tree/main/React-js/Component
+                        -template
+                    </CodeBox>
                     <h2>Example</h2>
                     <p>
-                        Update the templates in your React project with the
-                        templates from the templify vault:
+                        Load the predefined templates from the templify-vault
+                        for a React TypeScript project:
                     </p>
                     <CodeBox>
                         tpy load
                         https://github.com/cophilot/templify-vault/tree/main/React-ts
-                        -force
+                    </CodeBox>
+                    <p>
+                        Load the Component template from the templify-vault for
+                        a React JavaScript project and overwrite the existing
+                        Component template that is already in the project:
+                    </p>
+                    <CodeBox>
+                        tpy load
+                        https://github.com/cophilot/templify-vault/tree/main/React-js/Component
+                        -template -force
                     </CodeBox>
                     <button
                         onClick={() => {

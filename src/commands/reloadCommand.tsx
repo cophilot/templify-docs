@@ -35,10 +35,15 @@ function reloadCommand() {
                     <CodeBox>tpy reload Component -strict</CodeBox>
                     <h2>Example</h2>
                     <p>
-                        The Component template has changed and you want to
-                        reload it:
+                        The Component template in the remote repository has
+                        changed and you want to reload it:
                     </p>
                     <CodeBox>tpy reload comp</CodeBox>
+                    <p>
+                        Update all templates that have a source in the{' '}
+                        <code>.templify</code> file:
+                    </p>
+                    <CodeBox>tpy reload</CodeBox>
                     <button
                         onClick={() => {
                             window.history.back();

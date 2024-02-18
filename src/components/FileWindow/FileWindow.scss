@@ -23,9 +23,16 @@
     font-family: 'Fira Code', monospace;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    overflow-x: auto;
 }
 @media screen and (max-width: 768px) {
     .FileWindow {
-        width: 90%;
+        width: 100%;
+        .title-bar {
+            font-size: 0.7rem;
+        }
+        pre {
+            font-size: 0.5rem;
+        }
     }
 }
