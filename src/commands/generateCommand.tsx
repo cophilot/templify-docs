@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import { Link } from 'react-router-dom';
 
 function generateCommand() {
     return (
@@ -30,17 +31,13 @@ function generateCommand() {
                         command.
                     </p>
                     <p>
-                        By default the <code>template-name</code> has only to
-                        match a template beginning, so that the command can find
-                        the correct template (case insensitive).
-                    </p>
-                    <p>
-                        <i>Example</i>: if you have a template named{' '}
-                        <code>Component</code>, you can use
-                        <code>tpy generate c ... </code> if there are no other
-                        templates beginning with <code>c</code>. If there is a
-                        template named <code>Container</code> as well, you have
-                        to use <code>typ generate com ...</code>.
+                        <i>
+                            The template-name follows the{' '}
+                            <Link to="/template-name-matching">
+                                Template Name Matching
+                            </Link>{' '}
+                            rules.
+                        </i>
                     </p>
                     <h3>new-name</h3>
                     <p>
@@ -52,7 +49,14 @@ function generateCommand() {
                     <h3>-strict</h3>
                     <p>
                         If this flag is set, the <code>template-name</code> has
-                        to match exactly the name of the template.
+                        to match exactly the name of the template and will not
+                        follow the{' '}
+                        <Link to="/template-name-matching">
+                            {' '}
+                            Template Naming Matching
+                        </Link>
+                        . If the template does not exist, an error will
+                        bethrown.
                     </p>
                     <CodeBox>tpy generate Component NavBar -strict</CodeBox>
                     <h3>-dry-run</h3>

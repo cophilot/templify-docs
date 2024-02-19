@@ -3,7 +3,7 @@ import PulseLogo from '../../components/PulseLogo/PulseLogo';
 import './HomeView.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import Divider from '../../components/Divider/Divider';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import MySection from '../../components/MySection/MySection';
 import CodeBox from '../../components/CodeBox/CodeBox';
 import FileWindow from '../../components/FileWindow/FileWindow';
@@ -79,6 +79,47 @@ function HomeView() {
                             from the command line in a matter of seconds so you
                             can focus on the important stuff.
                         </p>
+                    </MySection>
+                    <Divider></Divider>
+                    <MySection>
+                        <ul
+                            style={{
+                                fontWeight: 'bold',
+                            }}>
+                            <li>
+                                <Link to="/installation">Installation</Link>
+                            </li>
+                            <ul>
+                                <li>
+                                    <Link to="/installation-linux">Linux</Link>
+                                </li>
+                                <li>
+                                    <Link to="/installation-windows">
+                                        Windows
+                                    </Link>
+                                </li>
+                            </ul>
+                            <li>
+                                <Link to="/structure">Structure</Link>
+                            </li>
+                            <li>
+                                <Link to="/templates">Templates</Link>
+                            </li>
+                            <li>
+                                <Link to="/.templify">.templify</Link>
+                            </li>
+                            <li>
+                                <Link to="/placeholders">Placeholders</Link>
+                            </li>
+                            <li>
+                                <Link to="/template-name-matching">
+                                    Template Name Matching
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/versioning">Versioning</Link>
+                            </li>
+                        </ul>
                     </MySection>
                     <Divider></Divider>
                     <MySection heading="Installation">
@@ -276,6 +317,26 @@ function HomeView() {
                                 You can use placeholders also in the{' '}
                                 <code>.templify</code> file.
                             </i>
+                        </p>
+                    </MySection>
+                    <Divider></Divider>
+                    <MySection heading="Template Name Matching">
+                        <p>
+                            For some commands you have to specify a template
+                            name. To avoid having to type the full name of the
+                            template, templify supports{' '}
+                            <b>template name matching</b>. This means that you
+                            can type only the first few letters of the template
+                            name, as long as it is unique and templify will find
+                            the correct template (<i>case-insensitive</i>).
+                        </p>
+                        <p>
+                            <b>Example</b>: If you only have a template called{' '}
+                            <code>Component</code> you can type <code>c</code>{' '}
+                            instead of <code>Component</code> because it is
+                            unique. If you have an additional template called{' '}
+                            <code>Container</code> you have to type at least{' '}
+                            <code>com</code> to make it unique.
                         </p>
                     </MySection>
 

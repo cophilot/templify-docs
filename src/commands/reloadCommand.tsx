@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import { Link } from 'react-router-dom';
 
 function reloadCommand() {
     return (
@@ -25,12 +26,27 @@ function reloadCommand() {
                         provided, all templates that have a source will be
                         reloaded.
                     </p>
+                    <p>
+                        <i>
+                            The template-name follows the{' '}
+                            <Link to="/template-name-matching">
+                                Template Name Matching
+                            </Link>{' '}
+                            rules.
+                        </i>
+                    </p>
                     <h2>Flags</h2>
                     <h3>-strict</h3>
                     <p>
-                        If this flag is provided, the command will only reload
-                        the specified template. If the template does not exist,
-                        an error will be thrown.
+                        If this flag is set, the <code>template-name</code> has
+                        to match exactly the name of the template and will not
+                        follow the{' '}
+                        <Link to="/template-name-matching">
+                            {' '}
+                            Template Naming Matching
+                        </Link>
+                        . If the template does not exist, an error will
+                        bethrown.
                     </p>
                     <CodeBox>tpy reload Component -strict</CodeBox>
                     <h2>Example</h2>
