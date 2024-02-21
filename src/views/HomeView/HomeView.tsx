@@ -111,6 +111,13 @@ function HomeView() {
                             <li>
                                 <Link to="/placeholders">Placeholders</Link>
                             </li>
+                            <ul>
+                                <li>
+                                    <Link to="/placeholders-case-conversion">
+                                        Case conversion
+                                    </Link>
+                                </li>
+                            </ul>
                             <li>
                                 <Link to="/template-name-matching">
                                     Template Name Matching
@@ -295,7 +302,13 @@ function HomeView() {
                         <ul>
                             <li>
                                 <code>$$name$$</code> - The name you want to
-                                give the file
+                                give the file.{' '}
+                                <i>
+                                    Supports{' '}
+                                    <Link to="placeholders-case-conversion">
+                                        Case conversion
+                                    </Link>
+                                </i>
                             </li>
                             <li>
                                 <code>$$git-name$$</code> - The name of the
@@ -306,7 +319,12 @@ function HomeView() {
                                 <code>$$year$$</code> - The current year
                             </li>
                             <li>
-                                <code>$$month$$</code> - The current month
+                                <code>$$month$$</code> - The current month as a
+                                number
+                            </li>
+                            <li>
+                                <code>$$month-name$$</code> - The current month
+                                as the name
                             </li>
                             <li>
                                 <code>$$day$$</code> - The current day
@@ -318,6 +336,57 @@ function HomeView() {
                                 <code>.templify</code> file.
                             </i>
                         </p>
+                        <MySubHeading parentHeading="Placeholders">
+                            Case conversion
+                        </MySubHeading>
+
+                        <p>
+                            Case conversion is used to convert placeholders to
+                            different case styles. You can use them by adding a
+                            <code>.</code> and the case style to a placeholder
+                            that supports case conversion (inside the{' '}
+                            <code>$$</code>).
+                        </p>
+                        <p>
+                            <i>
+                                Example: <code>$$name.kebab$$</code>
+                            </i>
+                        </p>
+                        <p>You can use the following case conversion:</p>
+                        <ul>
+                            <li>
+                                <code>{'$$<placeholder>.lower$$'}</code>: Lower
+                                case (e.g. <code>myfirstcomponent</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.upper$$'}</code>: Upper
+                                case (e.g. <code>MYFIRSTCOMPONENT</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.camel$$'}</code>: Camel
+                                case (e.g. <code>myFirstComponent</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.snake$$'}</code>: Snake
+                                case (e.g. <code>my_first_component</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.kebab$$'}</code>: Kebab
+                                case (e.g. <code>my-first-component</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.pascal$$'}</code>:
+                                Pascal case (e.g. <code>MyFirstComponent</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.macro$$'}</code>: Macro
+                                case (e.g. <code>MY_FIRST_COMPONENT</code>)
+                            </li>
+                            <li>
+                                <code>{'$$<placeholder>.train$$'}</code>: Train
+                                case (e.g. <code>My-First-Component</code>)
+                            </li>
+                        </ul>
                     </MySection>
                     <Divider></Divider>
                     <MySection heading="Template Name Matching">

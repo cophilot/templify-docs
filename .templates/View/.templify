@@ -3,6 +3,6 @@
 # description:The description of the template
 # path:The path of the template
 description:A new View
-path:src/views/$$name$$View
+path:src/views/$$name.pascal$$View
 
 .source:https://github.com/cophilot/templify-vault/tree/main/React-ts/View
