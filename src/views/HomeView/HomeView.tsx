@@ -13,6 +13,7 @@ function HomeView() {
     const [version, setVersion] = useState<string>('loading...');
 
     useEffect(() => {
+        console.log('OS: ', getOS());
         fetch(
             'https://api.github.com/repos/cophilot/templify/releases/latest'
         ).then((response) => {
@@ -21,6 +22,29 @@ function HomeView() {
             });
         });
     }, []);
+
+    const getOS = () => {
+        const userAgent = window.navigator.userAgent;
+        const platform = window.navigator.platform;
+        const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+        const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+        const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+        let os = null;
+
+        if (macosPlatforms.indexOf(platform) !== -1) {
+            os = 'macOS';
+        } else if (iosPlatforms.indexOf(platform) !== -1) {
+            os = 'macOS';
+        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+            os = 'Windows';
+        } else if (/Android/.test(userAgent)) {
+            os = 'Linux';
+        } else if (!os && /Linux/.test(platform)) {
+            os = 'Linux';
+        }
+
+        return os;
+    };
 
     const { section } = useParams();
     if (section) {
@@ -94,6 +118,9 @@ function HomeView() {
                                     <Link to="/installation-linux">Linux</Link>
                                 </li>
                                 <li>
+                                    <Link to="/installation-macos">macOS</Link>
+                                </li>
+                                <li>
                                     <Link to="/installation-windows">
                                         Windows
                                     </Link>
@@ -158,6 +185,55 @@ function HomeView() {
                         <CodeBox>
                             {
                                 'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -p <path>'
+                            }
+                        </CodeBox>
+                        <p>
+                            or download the binary from the{' '}
+                            <a
+                                href="https://github.com/cophilot/templify/releases/latest"
+                                target="_blank">
+                                latest release
+                            </a>{' '}
+                            and place it in your <code>$PATH</code>.
+                        </p>
+                        <p>
+                            <i>
+                                You may need to restart your terminal after
+                                installation for the changes to take effect.
+                            </i>
+                        </p>
+                        <p>
+                            After installation run <code>tpy version</code> to
+                            verify that the installation was successful.
+                        </p>
+                        <MySubHeading parentHeading="Installation">
+                            macOS
+                        </MySubHeading>
+                        <p>
+                            Run the following command in your terminal to
+                            isntall the latest version of templify:
+                        </p>
+                        <CodeBox>
+                            curl -s
+                            https://raw.githubusercontent.com/cophilot/templify/master/install
+                            | bash -s -- -y -macOS
+                        </CodeBox>
+                        <p>
+                            Optionally you can specify a version with the{' '}
+                            <code>-v</code> flag:
+                        </p>
+                        <CodeBox>
+                            {
+                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -macOS -v <version>'
+                            }
+                        </CodeBox>
+                        <p>
+                            You can also define the installation path with the
+                            <code>-p</code> flag:
+                        </p>
+                        <CodeBox>
+                            {
+                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -macOS -p <path>'
                             }
                         </CodeBox>
                         <p>
