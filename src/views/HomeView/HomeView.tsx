@@ -5,15 +5,14 @@ import NavBar from '../../components/NavBar/NavBar';
 import Divider from '../../components/Divider/Divider';
 import { Link, useParams } from 'react-router-dom';
 import MySection from '../../components/MySection/MySection';
-import CodeBox from '../../components/CodeBox/CodeBox';
 import FileWindow from '../../components/FileWindow/FileWindow';
 import MySubHeading from '../../components/MySubHeading/MySubHeading';
+import InstallationGuide from '../../components/InstallationGuide/InstallationGuide';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('loading...');
 
     useEffect(() => {
-        console.log('OS: ', getOS());
         fetch(
             'https://api.github.com/repos/cophilot/templify/releases/latest'
         ).then((response) => {
@@ -22,29 +21,6 @@ function HomeView() {
             });
         });
     }, []);
-
-    const getOS = () => {
-        const userAgent = window.navigator.userAgent;
-        const platform = window.navigator.platform;
-        const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
-        const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
-        const iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-        let os = null;
-
-        if (macosPlatforms.indexOf(platform) !== -1) {
-            os = 'macOS';
-        } else if (iosPlatforms.indexOf(platform) !== -1) {
-            os = 'macOS';
-        } else if (windowsPlatforms.indexOf(platform) !== -1) {
-            os = 'Windows';
-        } else if (/Android/.test(userAgent)) {
-            os = 'Linux';
-        } else if (!os && /Linux/.test(platform)) {
-            os = 'Linux';
-        }
-
-        return os;
-    };
 
     const { section } = useParams();
     if (section) {
@@ -115,10 +91,9 @@ function HomeView() {
                             </li>
                             <ul>
                                 <li>
-                                    <Link to="/installation-linux">Linux</Link>
-                                </li>
-                                <li>
-                                    <Link to="/installation-macos">macOS</Link>
+                                    <Link to="/installation-macos-&-linux">
+                                        macOS & Linux
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link to="/installation-windows">
@@ -156,145 +131,7 @@ function HomeView() {
                         </ul>
                     </MySection>
                     <Divider></Divider>
-                    <MySection heading="Installation">
-                        <MySubHeading parentHeading="Installation">
-                            Linux
-                        </MySubHeading>
-                        <p>
-                            Run the following command in your terminal to
-                            isntall the latest version of templify:
-                        </p>
-                        <CodeBox>
-                            curl -s
-                            https://raw.githubusercontent.com/cophilot/templify/master/install
-                            | bash -s -- -y
-                        </CodeBox>
-                        <p>
-                            Optionally you can specify a version with the{' '}
-                            <code>-v</code> flag:
-                        </p>
-                        <CodeBox>
-                            {
-                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -v <version>'
-                            }
-                        </CodeBox>
-                        <p>
-                            You can also define the installation path with the
-                            <code>-p</code> flag:
-                        </p>
-                        <CodeBox>
-                            {
-                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -p <path>'
-                            }
-                        </CodeBox>
-                        <p>
-                            or download the binary from the{' '}
-                            <a
-                                href="https://github.com/cophilot/templify/releases/latest"
-                                target="_blank">
-                                latest release
-                            </a>{' '}
-                            and place it in your <code>$PATH</code>.
-                        </p>
-                        <p>
-                            <i>
-                                You may need to restart your terminal after
-                                installation for the changes to take effect.
-                            </i>
-                        </p>
-                        <p>
-                            After installation run <code>tpy version</code> to
-                            verify that the installation was successful.
-                        </p>
-                        <MySubHeading parentHeading="Installation">
-                            macOS
-                        </MySubHeading>
-                        <p>
-                            Run the following command in your terminal to
-                            isntall the latest version of templify:
-                        </p>
-                        <CodeBox>
-                            curl -s
-                            https://raw.githubusercontent.com/cophilot/templify/master/install
-                            | bash -s -- -y -macOS
-                        </CodeBox>
-                        <p>
-                            Optionally you can specify a version with the{' '}
-                            <code>-v</code> flag:
-                        </p>
-                        <CodeBox>
-                            {
-                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -macOS -v <version>'
-                            }
-                        </CodeBox>
-                        <p>
-                            You can also define the installation path with the
-                            <code>-p</code> flag:
-                        </p>
-                        <CodeBox>
-                            {
-                                'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -macOS -p <path>'
-                            }
-                        </CodeBox>
-                        <p>
-                            or download the binary from the{' '}
-                            <a
-                                href="https://github.com/cophilot/templify/releases/latest"
-                                target="_blank">
-                                latest release
-                            </a>{' '}
-                            and place it in your <code>$PATH</code>.
-                        </p>
-                        <p>
-                            <i>
-                                You may need to restart your terminal after
-                                installation for the changes to take effect.
-                            </i>
-                        </p>
-                        <p>
-                            After installation run <code>tpy version</code> to
-                            verify that the installation was successful.
-                        </p>
-
-                        <MySubHeading parentHeading="Installation">
-                            Windows
-                        </MySubHeading>
-                        <ol>
-                            <li>
-                                Download the <code>tpy.exe</code> binary from
-                                the{' '}
-                                <a
-                                    href="https://github.com/cophilot/templify/releases/latest"
-                                    target="_blank">
-                                    latest release
-                                </a>
-                            </li>
-                            <li>
-                                Create a root folder for templify, e.g.
-                                <code>C:\Program Files\templify</code>
-                            </li>
-                            <li>
-                                Inside the root folder create a folder called
-                                <code>bin</code>
-                            </li>
-                            <li>
-                                Place the <code>tpy.exe</code> binary inside the{' '}
-                                <code>bin</code> folder
-                            </li>
-                            <li>
-                                Add the bin folder to your system's{' '}
-                                <a
-                                    href="https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53"
-                                    target="_blank">
-                                    PATH variable
-                                </a>
-                            </li>
-                        </ol>
-                        <p>
-                            After installation run <code>tpy version</code> to
-                            verify that the installation was successful.
-                        </p>
-                    </MySection>
+                    <InstallationGuide></InstallationGuide>
                     <Divider></Divider>
                     <MySection heading="Structure">
                         <p>

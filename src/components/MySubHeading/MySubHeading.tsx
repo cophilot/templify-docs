@@ -4,6 +4,7 @@ interface Props {
     parentHeading: string;
     children: React.ReactNode;
     style?: React.CSSProperties;
+    icons?: string[];
 }
 
 /**
@@ -12,7 +13,7 @@ interface Props {
  * @version 1.0.0
  * @created 2024-2-17
  */
-function MySubHeading({ children, style, parentHeading }: Props) {
+function MySubHeading({ children, style, parentHeading, icons = [] }: Props) {
     const urlHeading =
         parentHeading.toString().toLowerCase().replace(/ /g, '-') +
         '-' +
@@ -43,6 +44,9 @@ function MySubHeading({ children, style, parentHeading }: Props) {
             id={urlHeading}
             onClick={editUrl}>
             {children}
+            {icons.map((icon, index) => {
+                return <i key={index} className={icon + ' my-icon'}></i>;
+            })}
             <i className="bi bi-link-45deg link-icon"></i>
         </h2>
     );

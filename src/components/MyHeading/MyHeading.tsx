@@ -3,9 +3,10 @@ import './MyHeading.scss';
 interface Props {
     children: React.ReactNode;
     style?: React.CSSProperties;
+    icon?: string | null;
 }
 
-function MyHeading({ children, style }: Props) {
+function MyHeading({ children, style, icon }: Props) {
     const urlHeading = children!.toString().toLowerCase().replace(/ /g, '-');
 
     const editUrl = () => {
@@ -33,6 +34,7 @@ function MyHeading({ children, style }: Props) {
             id={urlHeading}
             onClick={editUrl}>
             {children}
+            {icon && <i className={icon}></i>}
             <i className="bi bi-link-45deg link-icon"></i>
         </h1>
     );

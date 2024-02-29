@@ -1,5 +1,6 @@
 .MySubHeading {
     cursor: pointer;
+
     .link-icon {
         opacity: 0;
     }
@@ -8,4 +9,9 @@
             opacity: 0.6;
         }
     }
+}
+.my-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1em;
 }
