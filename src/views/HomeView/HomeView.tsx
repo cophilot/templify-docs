@@ -8,16 +8,17 @@ import MySection from '../../components/MySection/MySection';
 import FileWindow from '../../components/FileWindow/FileWindow';
 import MySubHeading from '../../components/MySubHeading/MySubHeading';
 import InstallationGuide from '../../components/InstallationGuide/InstallationGuide';
+import WhatsNew from '../../components/WhatsNew/WhatsNew';
 
 function HomeView() {
-    const [version, setVersion] = useState<string>('loading...');
+    const [version, setVersion] = useState<string>('Loading...');
 
     useEffect(() => {
         fetch(
             'https://api.github.com/repos/cophilot/templify/releases/latest'
         ).then((response) => {
             response.json().then((data) => {
-                setVersion('v' + data.tag_name);
+                setVersion(data.tag_name);
             });
         });
     }, []);
@@ -45,7 +46,7 @@ function HomeView() {
                         className="version-label"
                         href="https://github.com/cophilot/templify/releases/latest"
                         target="_blank">
-                        {version}
+                        {'v' + version}
                     </a>
 
                     <p className="">
@@ -86,6 +87,9 @@ function HomeView() {
                             style={{
                                 fontWeight: 'bold',
                             }}>
+                            <li>
+                                <Link to="/whats-new">What's new</Link>
+                            </li>
                             <li>
                                 <Link to="/installation">Installation</Link>
                             </li>
@@ -129,6 +133,15 @@ function HomeView() {
                                 <Link to="/versioning">Versioning</Link>
                             </li>
                         </ul>
+                    </MySection>
+                    <Divider></Divider>
+                    <MySection heading="What's new">
+                        <p>
+                            <i>
+                                Whats new in version <b>{version}</b> ?
+                            </i>
+                        </p>
+                        <WhatsNew />
                     </MySection>
                     <Divider></Divider>
                     <InstallationGuide></InstallationGuide>

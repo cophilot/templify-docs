@@ -7,7 +7,11 @@ interface Props {
 }
 
 function MyHeading({ children, style, icon }: Props) {
-    const urlHeading = children!.toString().toLowerCase().replace(/ /g, '-');
+    const transformToURLString = (str: string) => {
+        return str.toLowerCase().replace(/ /g, '-').replace(/'/g, '');
+    };
+
+    const urlHeading = transformToURLString(children as string);
 
     const editUrl = () => {
         const url = window.location.href;
