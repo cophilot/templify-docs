@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
 
 function helpCommand() {
     return (
@@ -11,8 +12,11 @@ function helpCommand() {
             <div className="content">
                 <div className="command-container">
                     <AnimatedCommandBox allCommands={['help']} />
+                    <ShortSwitch></ShortSwitch>
                     <p>Open the help center.</p>
-                    <CodeBox>{'tpy help [command]'}</CodeBox>
+                    <CodeBox shortForm="tpy h [command]">
+                        tpy help [command]
+                    </CodeBox>
                     <h2>Arguments</h2>
                     <h3>command</h3>
                     <p>
@@ -25,7 +29,7 @@ function helpCommand() {
                     <CodeBox>tpy help -flag</CodeBox> */}
                     <h2>Example</h2>
                     <p>Get help for the generate command:</p>
-                    <CodeBox>tpy help generate</CodeBox>
+                    <CodeBox shortForm="tpy h g">tpy help generate</CodeBox>
                     <button
                         onClick={() => {
                             window.history.back();

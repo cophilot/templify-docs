@@ -1,10 +1,13 @@
 import './App.scss';
 import Routes from './Routes';
+import { Providers } from './providers/Providers';
 
 function App() {
     return (
         <>
-            <Routes />
+            <Providers>
+                <Routes />
+            </Providers>
         </>
     );
 }

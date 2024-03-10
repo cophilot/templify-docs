@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
 
 function $$name$$Command() {
     return (
@@ -11,6 +12,7 @@ function $$name$$Command() {
             <div className="content">
                 <div className="command-container">
                     <AnimatedCommandBox allCommands={['$$name$$']} />
+                    <ShortSwitch></ShortSwitch>
                     <p>Description</p>
                     <CodeBox>{'tpy $$name$$'}</CodeBox>
                     <h2>Arguments</h2>

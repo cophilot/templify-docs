@@ -4,6 +4,8 @@ import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
 import { Link } from 'react-router-dom';
+import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
+import Shortable from '../components/Shortable/Shortable';
 
 function generateCommand() {
     return (
@@ -12,6 +14,7 @@ function generateCommand() {
             <div className="content">
                 <div className="command-container">
                     <AnimatedCommandBox allCommands={['generate']} />
+                    <ShortSwitch></ShortSwitch>
                     <p>
                         Generate new files from a template. This will create new
                         files in your project based on the template you specify.
@@ -19,7 +22,7 @@ function generateCommand() {
                         of the template. The base path is the path you specified
                         in the <code>.templify</code> file.
                     </p>
-                    <CodeBox>
+                    <CodeBox shortForm="tpy g <template-name> <new-name> [flags]">
                         {'tpy generate <template-name> <new-name> [flags]'}
                     </CodeBox>
                     <h2>Arguments</h2>
@@ -58,33 +61,45 @@ function generateCommand() {
                         . If the template does not exist, an error will
                         bethrown.
                     </p>
-                    <CodeBox>tpy generate Component NavBar -strict</CodeBox>
-                    <h3>-dry-run</h3>
+                    <CodeBox shortForm="tpy g Component NavBar -strict">
+                        tpy generate Component NavBar -strict
+                    </CodeBox>
+                    <h3>
+                        <Shortable>-dry-run|-dr</Shortable>
+                    </h3>
                     <p>
                         If this flag is set, the command will not create any
                         files. It will only print the files that would be
                         created.
                     </p>
-                    <CodeBox>tpy generate Component NavBar -dry-run</CodeBox>
+                    <CodeBox shortForm="tpy g Component NavBar -dr">
+                        tpy generate Component NavBar -dry-run
+                    </CodeBox>
                     <h2>Example</h2>
                     <p>
                         Generate a new Navbar component in your React project
                         using the <code>Component</code> template and there
                         exists <b>no</b> other template:
                     </p>
-                    <CodeBox>tpy generate c Navbar</CodeBox>
+                    <CodeBox shortForm="tpy g c Navbar">
+                        tpy generate c Navbar
+                    </CodeBox>
                     <p>
                         Generate a new Navbar component in your React project
                         using the <code>Component</code> template but there
                         exists another template named <code>Container</code>:
                     </p>
-                    <CodeBox>tpy generate com Navbar</CodeBox>
+                    <CodeBox shortForm="tpy g com Navbar">
+                        tpy generate com Navbar
+                    </CodeBox>
                     <p>
                         Generate a new Navbar component in your React project
                         using the <code>Component</code> template using the{' '}
                         <code>-strict</code> flag:
                     </p>
-                    <CodeBox>tpy generate Component Navbar -strict</CodeBox>
+                    <CodeBox shortForm="tpy g Component Navbar -strict">
+                        tpy generate Component Navbar -strict
+                    </CodeBox>
                     <button
                         onClick={() => {
                             window.history.back();

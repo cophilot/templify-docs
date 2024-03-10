@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
 
 function versionCommand() {
     return (
@@ -11,8 +12,9 @@ function versionCommand() {
             <div className="content">
                 <div className="command-container">
                     <AnimatedCommandBox allCommands={['version']} />
+                    <ShortSwitch></ShortSwitch>
                     <p>Print the current installed version of templify.</p>
-                    <CodeBox>tpy version</CodeBox>
+                    <CodeBox shortForm="tpy v">tpy version</CodeBox>
                     {/* <h2>Arguments</h2>
                     <h3>Arg1</h3>
                     <p>Arg1Description</p>

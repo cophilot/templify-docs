@@ -64,7 +64,7 @@ function NavBar() {
                 </Link>
                 <a
                     className="navbar-link"
-                    href="https://github.com/cophilot/templify-vault"
+                    href="https://github.com/cophilot/templify-vault#templify-vault"
                     target="_blank">
                     Vault
                 </a>

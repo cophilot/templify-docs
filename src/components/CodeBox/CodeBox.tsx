@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import './CodeBox.scss';
+import Shortable from '../Shortable/Shortable';
 
 interface Props {
     children: React.ReactNode;
+    shortForm?: string;
 }
 
-function CodeBox({ children }: Props) {
+function CodeBox({ children, shortForm }: Props) {
     const [icon, setIcon] = useState('bi bi-clipboard');
+
+    if (!shortForm) shortForm = children as string;
 
     const copyToClipboard = () => {
         const el = document.createElement('textarea');
@@ -23,7 +27,9 @@ function CodeBox({ children }: Props) {
 
     return (
         <div className="CodeBox">
-            <pre>{children}</pre>
+            <pre>
+                <Shortable>{children + '|' + shortForm}</Shortable>
+            </pre>
             <i className={icon} onClick={copyToClipboard}></i>
         </div>
     );

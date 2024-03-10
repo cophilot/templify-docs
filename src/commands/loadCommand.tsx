@@ -3,6 +3,8 @@ import NavBar from '../components/NavBar/NavBar';
 import './command.scss';
 import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
+import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
+import Shortable from '../components/Shortable/Shortable';
 
 function loadCommand() {
     return (
@@ -11,6 +13,7 @@ function loadCommand() {
             <div className="content">
                 <div className="command-container">
                     <AnimatedCommandBox allCommands={['load']} />
+                    <ShortSwitch></ShortSwitch>
                     <p>
                         Load predefined templates from GitHub. This will add all
                         templates that are in the folder from the url, to your
@@ -22,7 +25,9 @@ function loadCommand() {
                             repositories!
                         </b>
                     </p>
-                    <CodeBox>{'tpy load <url> [flags]'}</CodeBox>
+                    <CodeBox shortForm="tpy l <url> [flags]">
+                        {'tpy load <url> [flags]'}
+                    </CodeBox>
                     <h2>Arguments</h2>
                     <h3>url</h3>
                     <p>
@@ -31,23 +36,27 @@ function loadCommand() {
                         actually templates (same structure like local).
                     </p>
                     <h2>Flags</h2>
-                    <h3>-force</h3>
+                    <h3>
+                        <Shortable>-force|-f</Shortable>
+                    </h3>
                     <p>
                         Overwrite existing templates with the same name. If not
                         set, the command will be aborted if a template with the
                         same name already exists.
                     </p>
-                    <CodeBox>
+                    <CodeBox shortForm="tpy l https://github.com/cophilot/templify-vault/tree/main/Example -f">
                         tpy load
                         https://github.com/cophilot/templify-vault/tree/main/Example
                         -force
                     </CodeBox>
-                    <h3>-template</h3>
+                    <h3>
+                        <Shortable>-template|-t</Shortable>
+                    </h3>
                     <p>
                         Specify that you only want to load a specific template
                         from a collection.
                     </p>
-                    <CodeBox>
+                    <CodeBox shortForm="tpy l https://github.com/cophilot/templify-vault/tree/main/React-js/Component -t">
                         tpy load
                         https://github.com/cophilot/templify-vault/tree/main/React-js/Component
                         -template
@@ -57,7 +66,7 @@ function loadCommand() {
                         Load the predefined templates from the templify-vault
                         for a React TypeScript project:
                     </p>
-                    <CodeBox>
+                    <CodeBox shortForm="tpy l https://github.com/cophilot/templify-vault/tree/main/React-ts">
                         tpy load
                         https://github.com/cophilot/templify-vault/tree/main/React-ts
                     </CodeBox>
@@ -66,7 +75,7 @@ function loadCommand() {
                         a React JavaScript project and overwrite the existing
                         Component template that is already in the project:
                     </p>
-                    <CodeBox>
+                    <CodeBox shortForm="tpy l https://github.com/cophilot/templify-vault/tree/main/React-js/Component -t -f">
                         tpy load
                         https://github.com/cophilot/templify-vault/tree/main/React-js/Component
                         -template -force
