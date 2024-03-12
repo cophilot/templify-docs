@@ -3,6 +3,7 @@ import './Shortable.scss';
 
 interface Props {
     children: React.ReactNode;
+    divider?: string;
 }
 
 /**
@@ -11,12 +12,12 @@ interface Props {
  * @version 1.0.0
  * @created 2024-3-10
  */
-function Shortable({ children }: Props) {
+function Shortable({ children, divider = '|' }: Props) {
     const isShortForm = useShortForm();
 
     if (children === undefined || children === null) return null;
 
-    const pieces = children.toString().split('|');
+    const pieces = children.toString().split(divider);
 
     const longForm = pieces[0];
     const shortForm = pieces[1] || longForm;

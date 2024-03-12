@@ -5,9 +5,10 @@ import Shortable from '../Shortable/Shortable';
 interface Props {
     children: React.ReactNode;
     shortForm?: string;
+    divider?: string;
 }
 
-function CodeBox({ children, shortForm }: Props) {
+function CodeBox({ children, shortForm, divider = '|' }: Props) {
     const [icon, setIcon] = useState('bi bi-clipboard');
 
     if (!shortForm) shortForm = children as string;
@@ -28,7 +29,9 @@ function CodeBox({ children, shortForm }: Props) {
     return (
         <div className="CodeBox">
             <pre>
-                <Shortable>{children + '|' + shortForm}</Shortable>
+                <Shortable divider={divider}>
+                    {children + divider + shortForm}
+                </Shortable>
             </pre>
             <i className={icon} onClick={copyToClipboard}></i>
         </div>

@@ -71,7 +71,7 @@ function InstallationGuide() {
                 Run the following command in your terminal to isntall the latest
                 version of templify:
             </p>
-            <CodeBox>
+            <CodeBox divider="§">
                 curl -s
                 https://raw.githubusercontent.com/cophilot/templify/master/install
                 | bash -s -- -y
@@ -80,7 +80,7 @@ function InstallationGuide() {
                 Optionally you can specify a version with the <code>-v</code>{' '}
                 flag:
             </p>
-            <CodeBox>
+            <CodeBox divider="§">
                 {
                     'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -v <version>'
                 }
@@ -89,7 +89,7 @@ function InstallationGuide() {
                 You can also define the installation path with the
                 <code>-p</code> flag:
             </p>
-            <CodeBox>
+            <CodeBox divider="§">
                 {
                     'curl -s https://raw.githubusercontent.com/cophilot/templify/master/install | bash -s -- -y -p <path>'
                 }
