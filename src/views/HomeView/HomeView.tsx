@@ -104,6 +104,11 @@ function HomeView() {
                                         Windows
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to="/installation-development">
+                                        Development
+                                    </Link>
+                                </li>
                             </ul>
                             <li>
                                 <Link to="/structure">Structure</Link>
@@ -123,11 +128,19 @@ function HomeView() {
                                         Case conversion
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to="/placeholders-variable-placeholders">
+                                        Variable Placeholders
+                                    </Link>
+                                </li>
                             </ul>
                             <li>
                                 <Link to="/template-name-matching">
                                     Template Name Matching
                                 </Link>
+                            </li>
+                            <li>
+                                <Link to="/global-flags">Global Flags</Link>
                             </li>
                             <li>
                                 <Link to="/versioning">Versioning</Link>
@@ -221,14 +234,14 @@ function HomeView() {
                             Placeholders are used to create dynamic templates.
                             They are defined by a <code>$$</code> prefix and
                             suffix. When generating a file from a template,
-                            placeholders are replaced by the user with the
-                            desired values. The following placeholders are
-                            supported:
+                            placeholders are replaced with the desired values.
+                            The following placeholders are supported:
                         </p>
                         <ul>
                             <li>
                                 <code>$$name$$</code> - The name you want to
-                                give the file.{' '}
+                                give the file. Will be provided as an argument
+                                in the <code>generate</code> command.
                                 <i>
                                     Supports{' '}
                                     <Link to="placeholders-case-conversion">
@@ -239,7 +252,11 @@ function HomeView() {
                             <li>
                                 <code>$$git-name$$</code> - The name of the
                                 current git user stored in the global git
-                                configuration ('unknown' if not set)
+                                configuration (
+                                <i>
+                                    <code>unknown</code> if not set
+                                </i>
+                                )
                             </li>
                             <li>
                                 <code>$$year$$</code> - The current year
@@ -313,6 +330,93 @@ function HomeView() {
                                 case (e.g. <code>My-First-Component</code>)
                             </li>
                         </ul>
+                        <MySubHeading parentHeading="Placeholders">
+                            Variable Placeholders
+                        </MySubHeading>
+                        <p>
+                            You can also define your own placeholders in the{' '}
+                            <code>.templify</code> file. You can use them in the
+                            same way as the predefined placeholders. To define a
+                            variable placeholder, add a new line to the{' '}
+                            <code>.templify</code> file with the following
+                            structure:
+                        </p>
+
+                        <FileWindow name=".templates/Component/.templify">
+                            ...
+                            <br />
+                            <br />
+                            # Variable Placeholder
+                            <br />
+                            {'var:<var-name>'}
+                            <br />
+                            # Example:
+                            <br />
+                            var:package
+                            <br />
+                            <br />
+                            # Variable Placeholder with default value
+                            <br />
+                            {'var:<var-name>(<default-value>)'}
+                            <br />
+                            # Example:
+                            <br />
+                            var:subdir(src)
+                            <br />
+                            <br />
+                            # Variable Placeholder with options
+                            <br />
+                            {
+                                'var:<var-name>[<option1-value>,<option2-value>...]'
+                            }
+                            <br />
+                            # Example:
+                            <br />
+                            var:project[frontend,backend]
+                            <br />
+                            <br />
+                            # You can use them as regular placeholders
+                            <br />
+                            path:$$project$$/$$subdir$$/$$package.kebab$$/$$name.pascal$$
+                            <br />
+                            <br />
+                            ...
+                        </FileWindow>
+                        <p>
+                            The value for the variable placeholder will be
+                            prompted when generating a file from the template.
+                        </p>
+                        <p>
+                            You can also specify the values with the{' '}
+                            <code>-var</code> flag when running the{' '}
+                            <code>generate</code> command. The flag has to be
+                            followed by a comma-separated list of values in the
+                            format <code>var-name=value</code>.
+                        </p>
+                        <p>
+                            <b>Example:</b>
+                        </p>
+
+                        <p>
+                            <i>
+                                When running the following command with the
+                                example <code>.templify</code> file above:
+                            </i>
+                        </p>
+                        <p>
+                            <code>
+                                tpy generate Component new-component -var
+                                project=frontend,subdir=components,package=myPackage
+                            </code>
+                        </p>
+                        <p>
+                            <i>
+                                Will generate the file in the following path:{' '}
+                            </i>
+                            <code>
+                                frontend/components/my-package/NewComponent
+                            </code>
+                        </p>
                     </MySection>
                     <Divider></Divider>
                     <MySection heading="Template Name Matching">
@@ -335,6 +439,28 @@ function HomeView() {
                         </p>
                     </MySection>
 
+                    <Divider></Divider>
+                    <MySection heading="Global Flags">
+                        <p>
+                            Global flags are flags that can be used with every
+                            command. They are prefixed with two dashes (
+                            <code>--</code>). The following global flags are
+                            supported:
+                        </p>
+                        <ul>
+                            <li>
+                                <code>--dev</code> - Run templify in development
+                                mode
+                            </li>
+                            <li>
+                                <code>--quiet</code> - Suppress all output
+                            </li>
+                            <li>
+                                <code>--log-file {'<value>'}</code> - Specify a
+                                log file where the output should be written to
+                            </li>
+                        </ul>
+                    </MySection>
                     <Divider></Divider>
                     <MySection heading="Versioning">
                         <p>

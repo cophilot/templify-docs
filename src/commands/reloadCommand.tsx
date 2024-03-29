@@ -5,6 +5,7 @@ import '../index.scss';
 import CodeBox from '../components/CodeBox/CodeBox';
 import { Link } from 'react-router-dom';
 import ShortSwitch from '../components/ShortSwitch/ShortSwitch';
+import Shortable from '../components/Shortable/Shortable';
 
 function reloadCommand() {
     return (
@@ -40,6 +41,18 @@ function reloadCommand() {
                         </i>
                     </p>
                     <h2>Flags</h2>
+                    <h3>
+                        <Shortable>-reset|-r</Shortable>
+                    </h3>
+                    <p>
+                        If this flag is set, the template will be deleted and
+                        then reloaded from the source. That means all changes
+                        you made to the template will be lost and the template
+                        will be reset to the source.
+                    </p>
+                    <CodeBox shortForm="tpy rl Component -r">
+                        tpy reload Component -reset
+                    </CodeBox>
                     <h3>-strict</h3>
                     <p>
                         If this flag is set, the <code>template-name</code> has
@@ -49,8 +62,8 @@ function reloadCommand() {
                             {' '}
                             Template Naming Matching
                         </Link>
-                        . If the template does not exist, an error will
-                        bethrown.
+                        . If the template does not exist, an error will be
+                        thrown.
                     </p>
                     <CodeBox shortForm="tpy rl Component -strict">
                         tpy reload Component -strict
@@ -62,10 +75,10 @@ function reloadCommand() {
                     </p>
                     <CodeBox shortForm="tpy rl comp">tpy reload comp</CodeBox>
                     <p>
-                        Update all templates that have a source in the{' '}
+                        Reset all templates that have a source in the{' '}
                         <code>.templify</code> file:
                     </p>
-                    <CodeBox shortForm="tpy rl">tpy reload</CodeBox>
+                    <CodeBox shortForm="tpy rl -r">tpy reload -reset</CodeBox>
                     <button
                         onClick={() => {
                             window.history.back();
