@@ -9,6 +9,7 @@ import FileWindow from '../../components/FileWindow/FileWindow';
 import MySubHeading from '../../components/MySubHeading/MySubHeading';
 import InstallationGuide from '../../components/InstallationGuide/InstallationGuide';
 import WhatsNew from '../../components/WhatsNew/WhatsNew';
+import ContributerSection from '../../components/ContributerSection';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('Loading...');
@@ -81,7 +82,7 @@ function HomeView() {
                             can focus on the important stuff.
                         </p>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection>
                         <ul
                             style={{
@@ -147,7 +148,7 @@ function HomeView() {
                             </li>
                         </ul>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="What's new">
                         <p>
                             <i>
@@ -156,9 +157,9 @@ function HomeView() {
                         </p>
                         <WhatsNew />
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <InstallationGuide></InstallationGuide>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="Structure">
                         <p>
                             The <code>.templates</code> directory is the heart
@@ -168,7 +169,7 @@ function HomeView() {
                             manually.
                         </p>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
 
                     <MySection heading="Templates">
                         <p>
@@ -185,7 +186,7 @@ function HomeView() {
                         </p>
                     </MySection>
 
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading=".templify">
                         <p>
                             The <code>.templify</code> file is a file that
@@ -228,7 +229,7 @@ function HomeView() {
                             </i>
                         </p>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="Placeholders">
                         <p>
                             Placeholders are used to create dynamic templates.
@@ -418,7 +419,7 @@ function HomeView() {
                             </code>
                         </p>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="Template Name Matching">
                         <p>
                             For some commands you have to specify a template
@@ -439,7 +440,7 @@ function HomeView() {
                         </p>
                     </MySection>
 
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="Global Flags">
                         <p>
                             Global flags are flags that can be used with every
@@ -461,7 +462,7 @@ function HomeView() {
                             </li>
                         </ul>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
                     <MySection heading="Versioning">
                         <p>
                             Currently, templify is in version{' '}
@@ -487,7 +488,9 @@ function HomeView() {
                             <li>
                                 <b>Major</b> - breaking changes, new features,
                                 improvements that change the behavior of the
-                                tool completely
+                                tool fundamentally. When updating to a new major
+                                version, you might have to adjust your templates
+                                or commands to work with the new version
                             </li>
                             <li>
                                 <b>Minor</b> - new features, new commands and
@@ -501,7 +504,21 @@ function HomeView() {
                             </li>
                         </ul>
                     </MySection>
-                    <Divider></Divider>
+                    <Divider />
+                    <MySection heading="Contributers">
+                        <p>
+                            Special thanks to the following people for their
+                            contributions to templify 🙌:
+                        </p>
+                        <ContributerSection />
+                    </MySection>
+                    <Divider />
+                    <MySection>
+                        <p>
+                            <b>Thank you for using templify!</b>
+                        </p>
+                    </MySection>
+                    <Divider />
                     <MySection>
                         <p
                             style={{
