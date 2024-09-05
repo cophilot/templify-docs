@@ -6,5 +6,8 @@
         font-family: 'Indie Flower', cursive;
         font-family: 'Single Day', cursive;
         font-family: 'Ubuntu', sans-serif;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

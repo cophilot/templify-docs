@@ -146,6 +146,9 @@ function HomeView() {
                             <li>
                                 <Link to="/versioning">Versioning</Link>
                             </li>
+                            <li>
+                                <Link to="/contributers">Contributers</Link>
+                            </li>
                         </ul>
                     </MySection>
                     <Divider />
