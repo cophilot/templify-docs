@@ -514,6 +514,13 @@ function HomeView() {
                             contributions to templify 🙌:
                         </p>
                         <ContributerSection />
+                        <a
+                            target="_blank"
+                            href="https://github.com/cophilot/templify?tab=readme-ov-file#development">
+                            <button className="btn mt">
+                                Become a Contributer
+                            </button>
+                        </a>
                     </MySection>
                     <Divider />
                     <MySection>
