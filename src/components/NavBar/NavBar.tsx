@@ -77,6 +77,12 @@ function NavBar() {
                 <Link className="navbar-link install-btn" to="/installation">
                     Install
                 </Link>
+                <a
+                    className="navbar-link"
+                    href="https://github.com/cophilot/templify"
+                    target="_blank">
+                    <i className="bi bi-github icon"></i>
+                </a>
             </div>
         </div>
     );
