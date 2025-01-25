@@ -10,6 +10,7 @@ import listCommand from './commands/listCommand';
 import loadCommand from './commands/loadCommand';
 import generateCommand from './commands/generateCommand';
 import reloadCommand from './commands/reloadCommand';
+import placeholderCommand from './commands/placeholderCommand';
 
 function Routes() {
     return (
@@ -24,6 +25,10 @@ function Routes() {
                     <Route path="/command/list" Component={listCommand} />
                     <Route path="/command/load" Component={loadCommand} />
                     <Route path="/command/reload" Component={reloadCommand} />
+                    <Route
+                        path="/command/placeholder"
+                        Component={placeholderCommand}
+                    />
                     <Route
                         path="/command/generate"
                         Component={generateCommand}

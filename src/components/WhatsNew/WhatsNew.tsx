@@ -9,7 +9,7 @@ import { handleMarkdownInlineCode } from '../../utils/handleMarkdown';
  * @created 2024-3-9
  */
 function WhatsNew() {
-    const [data, setData] = useState<JSX.Element[]>([<i>Loading...</i>]);
+    const [data, setData] = useState<JSX.Element[]>([<i>...</i>]);
 
     useEffect(() => {
         fetch(

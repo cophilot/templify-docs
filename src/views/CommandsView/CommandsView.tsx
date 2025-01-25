@@ -9,6 +9,7 @@ function CommandsView() {
         'version',
         'update',
         'init',
+        'placeholder',
         'new',
         'list',
         'load',

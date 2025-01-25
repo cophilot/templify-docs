@@ -12,7 +12,7 @@ import WhatsNew from '../../components/WhatsNew/WhatsNew';
 import ContributerSection from '../../components/ContributerSection';
 
 function HomeView() {
-    const [version, setVersion] = useState<string>('Loading...');
+    const [version, setVersion] = useState<string>('...');
 
     useEffect(() => {
         fetch(
@@ -41,7 +41,6 @@ function HomeView() {
             <div className="content">
                 <div className="Home">
                     <PulseLogo></PulseLogo>
-
                     <h1>templify</h1>
                     <a
                         className="version-label"
@@ -49,12 +48,10 @@ function HomeView() {
                         target="_blank">
                         {'v' + version}
                     </a>
-
                     <p className="">
                         templify is a CLI tool to keep track of templates and
                         generate files from them.
                     </p>
-
                     <a
                         href="https://github.com/cophilot/templify"
                         target="_blank">
@@ -118,7 +115,7 @@ function HomeView() {
                                 <Link to="/templates">Templates</Link>
                             </li>
                             <li>
-                                <Link to="/.templify">.templify</Link>
+                                <Link to="/.templify.yml">.templify.yml</Link>
                             </li>
                             <li>
                                 <Link to="/placeholders">Placeholders</Link>
@@ -136,6 +133,9 @@ function HomeView() {
                                 </li>
                             </ul>
                             <li>
+                                <Link to="/snipptes">Snippets TODO</Link>
+                            </li>
+                            <li>
                                 <Link to="/template-name-matching">
                                     Template Name Matching
                                 </Link>
@@ -145,6 +145,9 @@ function HomeView() {
                             </li>
                             <li>
                                 <Link to="/versioning">Versioning</Link>
+                            </li>
+                            <li>
+                                <Link to="/development">Development TODO</Link>
                             </li>
                             <li>
                                 <Link to="/contributers">Contributers</Link>
@@ -190,13 +193,12 @@ function HomeView() {
                     </MySection>
 
                     <Divider />
-                    <MySection heading=".templify">
+                    <MySection heading=".templify.yml">
                         <p>
-                            The <code>.templify</code> file is a file that
-                            contains configuration options for a template. It is
-                            located in the root of a template folder. It is a
-                            simple key-value file. The following keys are
-                            supported:
+                            The <code>.templify.yml</code> file is a YAML file
+                            that contains configuration options for a template.
+                            It is located in the root of a template folder. The
+                            following keys are supported:
                         </p>
                         <ul>
                             <li>
@@ -208,16 +210,16 @@ function HomeView() {
                                 should be generated based on the project root
                             </li>
                         </ul>
-                        <FileWindow name=".templates/Component/.templify">
+                        <FileWindow name=".templates/Component/.templify.yml">
                             # This file is used by templify to generate new
                             files from this template. <br /># You can use the
                             following variables in this file: <br />
                             # description:The description of the template <br />
                             # path:The path of the template <br />
                             <br />
-                            description:A default template for a new
+                            description: A default template for a new
                             react-component <br />
-                            path:src/components/$$name$$
+                            path: src/components/$$name$$
                         </FileWindow>
                         <p>
                             <b>
