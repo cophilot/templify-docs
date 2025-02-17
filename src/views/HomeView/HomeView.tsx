@@ -129,7 +129,7 @@ function HomeView() {
                                 </li>
                             </ul>
                             <li>
-                                <Link to="/Snippets">Snippets TODO</Link>
+                                <Link to="/snippets">Snippets</Link>
                             </li>
                             <li>
                                 <Link to="/template-name-matching">
@@ -337,49 +337,44 @@ function HomeView() {
                         </MySubHeading>
                         <p>
                             You can also define your own placeholders in the{' '}
-                            <code>.templify</code> file. You can use them in the
-                            same way as the predefined placeholders. To define a
-                            variable placeholder, add a new line to the{' '}
-                            <code>.templify</code> file with the following
+                            <code>.templify.yml</code> file. You can use them in
+                            the same way as the predefined placeholders. To
+                            define a variable placeholder, add a new list to the{' '}
+                            <code>.templify.yml</code> file with the following
                             structure:
                         </p>
 
-                        <FileWindow name=".templates/Component/.templify">
+                        <FileWindow name=".templates/Component/.templify.yml">
                             ...
                             <br />
                             <br />
                             # Variable Placeholder
                             <br />
-                            {'var:<var-name>'}
+                            vars:
+                            <br />
+                            {'  - <var1-name>[default-value][list-of-options]'}
+                            <br />
+                            {'  - <var2-name>[default-value][list-of-options]'}
+                            <br />
+                            {'  - ...'}
+                            <br />
+                            <br />
                             <br />
                             # Example:
                             <br />
-                            var:package
-                            <br />
-                            <br />
-                            # Variable Placeholder with default value
-                            <br />
-                            {'var:<var-name>(<default-value>)'}
-                            <br />
-                            # Example:
-                            <br />
-                            var:subdir(src)
-                            <br />
-                            <br />
-                            # Variable Placeholder with options
+                            vars:
                             <br />
                             {
-                                'var:<var-name>[<option1-value>,<option2-value>...]'
+                                '  - package # Variable Placeholder called package'
                             }
                             <br />
-                            # Example:
+                            {
+                                '  - subdir(src) # Variable Placeholder called subdir with default value src'
+                            }
                             <br />
-                            var:project[frontend,backend]
-                            <br />
-                            <br />
-                            # You can use them as regular placeholders
-                            <br />
-                            path:$$project$$/$$subdir$$/$$package.kebab$$/$$name.pascal$$
+                            {
+                                '  - project[frontend,backend] # Variable Placeholder called project with options frontend and backend'
+                            }
                             <br />
                             <br />
                             ...
@@ -514,9 +509,7 @@ function HomeView() {
                             contributions to templify 🙌:
                         </p>
                         <ContributerSection />
-                        <a
-                            target="_blank"
-                            href="https://github.com/cophilot/templify?tab=readme-ov-file#development">
+                        <a href="#development">
                             <button className="btn mt">
                                 Become a Contributor
                             </button>

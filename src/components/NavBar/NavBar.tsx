@@ -74,9 +74,16 @@ function NavBar() {
                     target="_blank">
                     Releases
                 </a>
+                <a
+                    className="navbar-link"
+                    href="https://templify.philipp-bonin.com/#/development"
+                    target="_blank">
+                    Contribute
+                </a>
                 <Link className="navbar-link install-btn" to="/installation">
                     Install
                 </Link>
+
                 <a
                     className="navbar-link"
                     href="https://github.com/cophilot/templify"
