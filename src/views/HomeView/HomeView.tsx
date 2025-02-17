@@ -10,9 +10,10 @@ import MySubHeading from '../../components/MySubHeading/MySubHeading';
 import InstallationGuide from '../../components/InstallationGuide/InstallationGuide';
 import WhatsNew from '../../components/WhatsNew/WhatsNew';
 import ContributerSection from '../../components/ContributerSection';
+import DevelopmentSection from '../section/DevelopmentSection';
 
 function HomeView() {
-    const [version, setVersion] = useState<string>('Loading...');
+    const [version, setVersion] = useState<string>('...');
 
     useEffect(() => {
         fetch(
@@ -41,7 +42,6 @@ function HomeView() {
             <div className="content">
                 <div className="Home">
                     <PulseLogo></PulseLogo>
-
                     <h1>templify</h1>
                     <a
                         className="version-label"
@@ -49,12 +49,10 @@ function HomeView() {
                         target="_blank">
                         {'v' + version}
                     </a>
-
                     <p className="">
                         templify is a CLI tool to keep track of templates and
                         generate files from them.
                     </p>
-
                     <a
                         href="https://github.com/cophilot/templify"
                         target="_blank">
@@ -105,11 +103,6 @@ function HomeView() {
                                         Windows
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to="/installation-development">
-                                        Development
-                                    </Link>
-                                </li>
                             </ul>
                             <li>
                                 <Link to="/structure">Structure</Link>
@@ -118,7 +111,7 @@ function HomeView() {
                                 <Link to="/templates">Templates</Link>
                             </li>
                             <li>
-                                <Link to="/.templify">.templify</Link>
+                                <Link to="/.templify.yml">.templify.yml</Link>
                             </li>
                             <li>
                                 <Link to="/placeholders">Placeholders</Link>
@@ -136,6 +129,9 @@ function HomeView() {
                                 </li>
                             </ul>
                             <li>
+                                <Link to="/snippets">Snippets</Link>
+                            </li>
+                            <li>
                                 <Link to="/template-name-matching">
                                     Template Name Matching
                                 </Link>
@@ -147,7 +143,10 @@ function HomeView() {
                                 <Link to="/versioning">Versioning</Link>
                             </li>
                             <li>
-                                <Link to="/contributers">Contributers</Link>
+                                <Link to="/development">Development</Link>
+                            </li>
+                            <li>
+                                <Link to="/Contributors">Contributors</Link>
                             </li>
                         </ul>
                     </MySection>
@@ -190,13 +189,12 @@ function HomeView() {
                     </MySection>
 
                     <Divider />
-                    <MySection heading=".templify">
+                    <MySection heading=".templify.yml">
                         <p>
-                            The <code>.templify</code> file is a file that
-                            contains configuration options for a template. It is
-                            located in the root of a template folder. It is a
-                            simple key-value file. The following keys are
-                            supported:
+                            The <code>.templify.yml</code> file is a YAML file
+                            that contains configuration options for a template.
+                            It is located in the root of a template folder. The
+                            following keys are supported:
                         </p>
                         <ul>
                             <li>
@@ -208,16 +206,16 @@ function HomeView() {
                                 should be generated based on the project root
                             </li>
                         </ul>
-                        <FileWindow name=".templates/Component/.templify">
+                        <FileWindow name=".templates/Component/.templify.yml">
                             # This file is used by templify to generate new
                             files from this template. <br /># You can use the
                             following variables in this file: <br />
                             # description:The description of the template <br />
                             # path:The path of the template <br />
                             <br />
-                            description:A default template for a new
+                            description: A default template for a new
                             react-component <br />
-                            path:src/components/$$name$$
+                            path: src/components/$$name$$
                         </FileWindow>
                         <p>
                             <b>
@@ -339,49 +337,44 @@ function HomeView() {
                         </MySubHeading>
                         <p>
                             You can also define your own placeholders in the{' '}
-                            <code>.templify</code> file. You can use them in the
-                            same way as the predefined placeholders. To define a
-                            variable placeholder, add a new line to the{' '}
-                            <code>.templify</code> file with the following
+                            <code>.templify.yml</code> file. You can use them in
+                            the same way as the predefined placeholders. To
+                            define a variable placeholder, add a new list to the{' '}
+                            <code>.templify.yml</code> file with the following
                             structure:
                         </p>
 
-                        <FileWindow name=".templates/Component/.templify">
+                        <FileWindow name=".templates/Component/.templify.yml">
                             ...
                             <br />
                             <br />
                             # Variable Placeholder
                             <br />
-                            {'var:<var-name>'}
+                            vars:
+                            <br />
+                            {'  - <var1-name>[default-value][list-of-options]'}
+                            <br />
+                            {'  - <var2-name>[default-value][list-of-options]'}
+                            <br />
+                            {'  - ...'}
+                            <br />
+                            <br />
                             <br />
                             # Example:
                             <br />
-                            var:package
-                            <br />
-                            <br />
-                            # Variable Placeholder with default value
-                            <br />
-                            {'var:<var-name>(<default-value>)'}
-                            <br />
-                            # Example:
-                            <br />
-                            var:subdir(src)
-                            <br />
-                            <br />
-                            # Variable Placeholder with options
+                            vars:
                             <br />
                             {
-                                'var:<var-name>[<option1-value>,<option2-value>...]'
+                                '  - package # Variable Placeholder called package'
                             }
                             <br />
-                            # Example:
+                            {
+                                '  - subdir(src) # Variable Placeholder called subdir with default value src'
+                            }
                             <br />
-                            var:project[frontend,backend]
-                            <br />
-                            <br />
-                            # You can use them as regular placeholders
-                            <br />
-                            path:$$project$$/$$subdir$$/$$package.kebab$$/$$name.pascal$$
+                            {
+                                '  - project[frontend,backend] # Variable Placeholder called project with options frontend and backend'
+                            }
                             <br />
                             <br />
                             ...
@@ -508,17 +501,17 @@ function HomeView() {
                         </ul>
                     </MySection>
                     <Divider />
-                    <MySection heading="Contributers">
+                    <DevelopmentSection />
+                    <Divider />
+                    <MySection heading="Contributors">
                         <p>
                             Special thanks to the following people for their
                             contributions to templify 🙌:
                         </p>
                         <ContributerSection />
-                        <a
-                            target="_blank"
-                            href="https://github.com/cophilot/templify?tab=readme-ov-file#development">
+                        <a href="#development">
                             <button className="btn mt">
-                                Become a Contributer
+                                Become a Contributor
                             </button>
                         </a>
                     </MySection>

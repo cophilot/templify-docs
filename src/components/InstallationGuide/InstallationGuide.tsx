@@ -113,25 +113,6 @@ function InstallationGuide() {
                 the installation was successful.
             </p>
             {!isWindows() && windowsGuide}
-            <MySubHeading parentHeading="Installation">
-                Development
-            </MySubHeading>
-            <p>
-                <b>1.</b> Clone the repository and navigate into the folder:
-            </p>
-            <CodeBox divider="§">
-                {
-                    'git clone https://github.com/cophilot/templify.git && cd templify'
-                }
-            </CodeBox>
-            <p>
-                <b>2.</b> Run the setup script:
-            </p>
-            <CodeBox divider="§">{'./scripts/setup'}</CodeBox>
-            <p>
-                <b>3.</b> Now you can run templify in development mode with:
-            </p>
-            <CodeBox divider="§">{'cargo run <command> --dev'}</CodeBox>
         </MySection>
     );
 }
