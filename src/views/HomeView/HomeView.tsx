@@ -10,6 +10,7 @@ import MySubHeading from '../../components/MySubHeading/MySubHeading';
 import InstallationGuide from '../../components/InstallationGuide/InstallationGuide';
 import WhatsNew from '../../components/WhatsNew/WhatsNew';
 import ContributerSection from '../../components/ContributerSection';
+import DevelopmentSection from '../section/DevelopmentSection';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('...');
@@ -102,11 +103,6 @@ function HomeView() {
                                         Windows
                                     </Link>
                                 </li>
-                                <li>
-                                    <Link to="/installation-development">
-                                        Development
-                                    </Link>
-                                </li>
                             </ul>
                             <li>
                                 <Link to="/structure">Structure</Link>
@@ -133,7 +129,7 @@ function HomeView() {
                                 </li>
                             </ul>
                             <li>
-                                <Link to="/snipptes">Snippets TODO</Link>
+                                <Link to="/Snippets">Snippets TODO</Link>
                             </li>
                             <li>
                                 <Link to="/template-name-matching">
@@ -147,10 +143,10 @@ function HomeView() {
                                 <Link to="/versioning">Versioning</Link>
                             </li>
                             <li>
-                                <Link to="/development">Development TODO</Link>
+                                <Link to="/development">Development</Link>
                             </li>
                             <li>
-                                <Link to="/contributers">Contributers</Link>
+                                <Link to="/Contributors">Contributors</Link>
                             </li>
                         </ul>
                     </MySection>
@@ -510,7 +506,9 @@ function HomeView() {
                         </ul>
                     </MySection>
                     <Divider />
-                    <MySection heading="Contributers">
+                    <DevelopmentSection />
+                    <Divider />
+                    <MySection heading="Contributors">
                         <p>
                             Special thanks to the following people for their
                             contributions to templify 🙌:
@@ -520,7 +518,7 @@ function HomeView() {
                             target="_blank"
                             href="https://github.com/cophilot/templify?tab=readme-ov-file#development">
                             <button className="btn mt">
-                                Become a Contributer
+                                Become a Contributor
                             </button>
                         </a>
                     </MySection>
