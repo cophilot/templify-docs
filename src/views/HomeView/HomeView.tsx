@@ -11,6 +11,7 @@ import InstallationGuide from '../../components/InstallationGuide/InstallationGu
 import WhatsNew from '../../components/WhatsNew/WhatsNew';
 import ContributerSection from '../../components/ContributerSection';
 import DevelopmentSection from '../section/DevelopmentSection';
+import SnippetsSection from '../section/SnippetsSection';
 
 function HomeView() {
     const [version, setVersion] = useState<string>('...');
@@ -146,7 +147,7 @@ function HomeView() {
                                 <Link to="/development">Development</Link>
                             </li>
                             <li>
-                                <Link to="/Contributors">Contributors</Link>
+                                <Link to="/contributors">Contributors</Link>
                             </li>
                         </ul>
                     </MySection>
@@ -215,7 +216,11 @@ function HomeView() {
                             <br />
                             description: A default template for a new
                             react-component <br />
-                            path: src/components/$$name$$
+                            path: src/components/$$name$$ <br />
+                            vars: # Add Variable placeholders
+                            <br />
+                            snippets: # Add Snippets
+                            <br />
                         </FileWindow>
                         <p>
                             <b>
@@ -415,6 +420,8 @@ function HomeView() {
                             </code>
                         </p>
                     </MySection>
+                    <Divider />
+                    <SnippetsSection />
                     <Divider />
                     <MySection heading="Template Name Matching">
                         <p>

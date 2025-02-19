@@ -25,6 +25,9 @@ function WhatsNew() {
                     if (line === '' || line.startsWith('-')) {
                         continue;
                     }
+                    if (line.startsWith('Special thanks to')) {
+                        continue;
+                    }
                     newData.push(handleMarkdownInlineCode(line));
                 }
                 setData(newData);
