@@ -2,7 +2,7 @@
 # You can use the following variables in this file:
 # description:The description of the template
 # path:The path of the template
-description: A new typescipt type
-path:src/types
+description: A new typescript type
+path: src/types
 
-.source:https://github.com/cophilot/templify-vault/tree/main/React-ts/Type
+.source: https://github.com/cophilot/templify-vault/tree/main/React-ts/Type
