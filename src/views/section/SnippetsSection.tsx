@@ -38,7 +38,7 @@ export default function SnippetsSection() {
                 <i>Example:</i>
                 <br />
                 <br />
-                path: src/pages/$$route$$$$sub-route$$/$$name.pascal$$.tsx
+                path: src/pages/$$route$$$$sub-route$$
                 <br />
                 snippets:
                 <br />
